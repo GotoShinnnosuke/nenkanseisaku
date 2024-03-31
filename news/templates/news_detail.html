@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{object.title}}</title>
+  <link rel="icon" type="image/x-icon"
+  href={% static 'assets/icons8-検索-16.png' %} />
+  <link href={% static 'css/styles.css' %} rel="stylesheet" />
+{% endblock %}
+{% block contents %}
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col offset-3">
+                    <h2>{{object.title}}</h2>
+                    <p>{{object.text}}</p>
+                    <br>
+                    <p>{{object.posted_at}}に投稿</p>
+                    <p><img src="{{object.image.url}}"></img></p>
+                </div>
+            </div>
+        </div>
+{% endblock %}

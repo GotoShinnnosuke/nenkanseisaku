@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>のす検索</title>
+<link rel="icon" type="image/x-icon"
+href={% static 'assets/icons8-検索-16.png' %} />
+<link href={% static 'css/styles.css' %} rel="stylesheet" />
+{% endblock %}
+{% block contents %}
+<body>
+    <link href={% static 'css/styles.css' %}  rel="stylesheet">
+    <h1>
+        <div class="midasi"  style="text-align: center;">のす検索！！！</div>
+        <header>
+            <link rel="icon"
+                href={% static 'assets/unnamed.png' %} />
+           <!-- Begin Yahoo Search Form -->
+    <form style="text-align: center;" action="https://search.yahoo.co.jp/search" method="get" target="_blank" style="margin:0;padding:0;" >
+        <p style="margin:auto"><a href="https://www.yahoo.co.jp/" target="_blank">
+            <img src="https://s.yimg.jp/images/search/guide/searchbox/080318/ysearch_logo_85_22.gif" alt="Yahoo! JAPAN" style="border:none;vertical-align:middle;padding:0;border:0;" width="110" height="22"></a>
+            <input type="text" name="p" size="50" style="margin:0 3px;width:50%;">
+            <input type="hidden" name="fr" value="yssw">
+            <input type="hidden" name="ei" value="utf-8">
+            <input type="submit" value="検索" style="margin:0;">
+        </p>
+    </form>
+<!-- End Yahoo! Search Form -->
+        </header>
+    </h1>
+    <h2>      
+        <nav id="global_navi">
+              <ul>
+                 <link href={% static 'css/styles.css' %}  rel="stylesheet">
+                  <li class="current"><a href="/">トップ</a></li>
+                  <li class="current"><a href="news/1">国際</a></li>
+                  <li class="current"><a href="news/2">経済</a></li>
+                  <li class="current"><a href="news/3">エンタメ</a></li>
+                  <li class="current"><a href="news/4">スポーツ</a></li>
+              </ul>
+        </nav>  
+    </h2>
+</body>
+    {% include 'news_list.html' %}
+
+    {% include 'pagenation.html' %}
+    <footer>
+      <!-- フッター内容 -->
+      <div class="footer">
+        &copy; 2023 のす検索
+      </div>
+    </footer>
+  </html>
+  
+
+  {% endblock %}
